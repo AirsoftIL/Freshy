@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freshy | הבלנדר האל-חוטי המושלם</title>
+    <!-- Tailwind CSS CDN לייצור עיצוב מהיר ומודרני -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- גופן Assistant הפופולרי והנקי של גוגל לעברית -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background: linear-gradient(135deg, #FFF5F5 0%, #FFE3E3 50%, #FFF0DB 100%);
+        }
+        .fruit-gradient {
+            background: linear-gradient(135deg, #FF5F6D 0%, #FFC371 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- סרגל ניווט עליון -->
+    <header class="w-full py-4 px-6 md:px-12 flex justify-between items-center glass-card sticky top-0 z-40 shadow-sm">
+        <div class="flex items-center gap-3">
+            <!-- מקום ללוגו - הקוד ימשוך את logo.png מהתיקייה ב-GitHub -->
+            <img src="logo.png.jpg" alt="freshy logo" class="h-10 w-10 rounded-full object-cover border border-orange-200 onerror-fallback" onerror="this.src='https://placehold.co/100x100/ff5f6d/ffffff?text=F'">
+            <span class="text-2xl font-black text-transparent bg-clip-text fruit-gradient tracking-wide">freshy.</span>
+        </div>
+        <nav class="hidden md:flex gap-8 font-semibold text-lg text-slate-700">
+            <a href="#about" class="hover:text-red-500 transition">עלינו</a>
+            <a href="#product-section" class="hover:text-red-500 transition">המוצר שלנו</a>
+            <a href="#faq" class="hover:text-red-500 transition">שאלות נפוצות</a>
+        </nav>
+        <button onclick="openProductPage()" class="fruit-gradient text-white font-bold py-2 px-6 rounded-full hover:shadow-lg transition transform hover:-translate-y-0.5">
+            הזמן עכשיו
+        </button>
+    </header>
+
+    <!-- אזור ראשי (Hero) -->
+    <main class="flex-grow container mx-auto px-6 py-12 md:py-24 flex flex-col lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2 space-y-6 text-center lg:text-right">
+            <span class="inline-block bg-orange-100 text-orange-600 font-bold px-4 py-1.5 rounded-full text-sm tracking-wider">הכירו את המהפכה הבריאה</span>
+            <h1 class="text-4xl md:text-6xl font-black leading-tight">
+                לערבל בריאות <br>
+                <span class="text-transparent bg-clip-text fruit-gradient">בכל מקום ובכל זמן</span>
+            </h1>
+            <p class="text-lg text-slate-600 max-w-lg mx-auto lg:mx-0">
+                השייק האהוב עליכם, החלבון שאחרי האימון או מזון התינוקות - הכל בלחיצת כפתור אחת פשוטה, בלי כבלים ובלי לכלוך.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                <button onclick="openProductPage()" class="fruit-gradient text-white text-lg font-bold py-3.5 px-8 rounded-full shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1">
+                    צפה במוצר ויתרונות 👈
+                </button>
+                <a href="#faq" class="bg-white border border-slate-200 text-slate-700 text-lg font-bold py-3.5 px-8 rounded-full hover:bg-slate-50 transition text-center">
+                    זמני משלוח ושירות
+                </a>
+            </div>
+        </div>
+
+        <!-- כרטיס המוצר הראשי -->
+        <div id="product-section" class="lg:w-1/2 w-full max-w-md mx-auto">
+            <div onclick="openProductPage()" class="glass-card rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all cursor-pointer transform hover:scale-[1.02] border border-white/50 relative group">
+                <div class="absolute top-4 right-4 bg-red-500 text-white font-bold text-xs px-3 py-1 rounded-full animate-pulse">
+                    הכי נמכר!
+                </div>
+                <!-- תמונת המוצר שתמשוך את blender.jpg מהתיקייה ב-GitHub -->
+                <div class="w-full h-80 rounded-2xl overflow-hidden bg-gradient-to-tr from-amber-100 to-red-100 mb-6 flex items-center justify-center">
+                    <img src="blender.png" alt="מערבל פירות אלחוטי freshy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1578643463396-0997cb5328c1?auto=format&fit=crop&w=600&q=80'">
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-2xl font-black text-slate-900">Freshy Blend</h3>
+                    <span class="text-xl font-bold text-red-500">149 ש״ח <span class="text-sm text-slate-400 line-through">249 ש״ח</span></span>
+                </div>
+                <p class="text-slate-600 mb-4">המערבל האל-חוטי הנייד והחזק ביותר לפירות, חלבון וקרח קפוא.</p>
+                <div class="w-full bg-slate-900 text-white text-center py-3 rounded-xl font-bold group-hover:bg-red-500 transition-colors">
+                    לפרטים מלאים ורכישה 🛍️
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- דף מוצר אינטראקטיבי (Modal) -->
+    <div id="product-page-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-in fade-in zoom-in duration-300">
+            <button onclick="closeProductPage()" class="absolute top-4 left-4 bg-slate-100 hover:bg-slate-200 text-slate-700 w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold transition">
+                ✕
+            </button>
+            <div class="p-6 md:p-10 flex flex-col md:flex-row gap-8">
+                <!-- תמונת המוצר בדף המוצר -->
+                <div class="md:w-1/2">
+                    <div class="w-full h-72 md:h-96 rounded-2xl overflow-hidden bg-gradient-to-tr from-orange-100 to-red-100">
+                        <img src="blender.png" alt="freshy blend zoom" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1578643463396-0997cb5328c1?auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                </div>
+                <!-- תוכן ותיאור המוצר -->
+                <div class="md:w-1/2 flex flex-col justify-between space-y-6">
+                    <div>
+                        <span class="text-sm font-bold text-red-500">זמין במלאי למשלוח מיידי!</span>
+                        <h2 class="text-3xl font-black text-slate-900 mt-1">Freshy Blend</h2>
+                        <p class="text-slate-500 text-sm mt-1">דגם: Pro Wireless 2026</p>
+                        
+                        <!-- מחיר -->
+                        <div class="mt-4 flex items-center gap-3">
+                            <span class="text-3xl font-extrabold text-red-500">149 ש״ח</span>
+                            <span class="text-lg text-slate-400 line-through">249 ש״ח</span>
+                            <span class="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">40% הנחה!</span>
+                        </div>
+
+                        <!-- רשימת יתרונות מאולתרת ומקצועית -->
+                        <div class="mt-6 space-y-3.5">
+                            <h4 class="font-bold text-slate-900 text-lg border-b pb-1">למה כולם מאוהבים ב-freshy?</h4>
+                            <ul class="space-y-3 text-slate-700 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500">⚡</span>
+                                    <span><strong>עוצמה אל-חוטית ללא פשרות:</strong> מנוע חזק במיוחד לריסוק מהיר של פירות קפואים, קרח ואבקות חלבון קשות.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500">🔋</span>
+                                    <span><strong>סוללה עוצמתית:</strong> עד 15 שימושים רצופים בטעינה מהירה אחת באמצעות חיבור USB-C אוניברסלי.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500">🧼</span>
+                                    <span><strong>פטנט ניקוי עצמי קל:</strong> רק להוסיף מים וטיפת סבון, להפעיל ל-10 שניות, לשטוף - והוא נקי ומבריק מחדש!</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500">🌱</span>
+                                    <span><strong>בטוח לחלוטין לבריאות:</strong> עשוי מחומרים מאושרים למזון שהם 100% BPA-Free לשמירה על הבריאות שלך ושל משפחתך.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-red-500">🎒</span>
+                                    <span><strong>קומפקטי וקל משקל:</strong> מעוצב עם ידית נשיאה סיליקונית נוחה, נכנס בקלות לתיק האימון או לרכב.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- כפתור הנעה לפעולה לרכישה ישירה -->
+                    <a href="https://wa.me/972546925532?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%90%D7%AA%20%D7%94%D7%91%D7%9C%D7%A0%D7%93%D7%A8%20%D7%94%D7%90%D7%9C-%D7%97%D7%95%D7%98%D7%99%20%D7%A9%D7%9C%20freshy!" target="_blank" class="w-full py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-center rounded-2xl flex items-center justify-center gap-2 shadow-lg transition duration-200">
+                        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.244 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.18 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.388 1.967 13.911 1.01 11.285 1.01 5.845 1.01 1.42 5.381 1.416 10.81c-.001 1.696.452 3.35 1.307 4.8l-.993 3.63 3.734-.964z"/></svg>
+                        להזמנה מהירה בוואצאפ עכשיו
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- אזור לשוניות מתקפלות (שירות ומשלוחים) בתחתית האתר -->
+    <section id="faq" class="py-16 bg-white/40 border-t border-slate-200/50">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h3 class="text-3xl font-black text-center mb-10 text-transparent bg-clip-text fruit-gradient">מידע חשוב ושירות לקוחות</h3>
+            
+            <div class="space-y-4">
+                <!-- לשונית 1 - משלוחים (כפי שביקשת) -->
+                <details class="group bg-white rounded-2xl border border-slate-200/60 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm hover:shadow transition" open>
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                        <span>🚀 כמה זמן משלוח?</span>
+                        <span class="transition group-open:rotate-180 text-red-500">▼</span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600 text-sm md:text-base">
+                        המשלוחים שלנו מהירים במיוחד! הבלנדר יגיע ארוז ומפנק עד לפתח הבית שלך תוך <strong>3-7 ימי עסקים</strong> לכל חלקי הארץ, ללא עלות נוספת.
+                    </p>
+                </details>
+
+                <!-- לשונית 2 - אחריות -->
+                <details class="group bg-white rounded-2xl border border-slate-200/60 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm hover:shadow transition">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                        <span>🛡️ האם יש אחריות על הבלנדר?</span>
+                        <span class="transition group-open:rotate-180 text-red-500">▼</span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600 text-sm md:text-base">
+                        בוודאי! אנחנו ב-freshy בטוחים באיכות הגבוהה של המוצר שלנו. תקבל אחריות מלאה למשך <strong>12 חודשים</strong> מיום הרכישה על כל תקלה טכנית או בעיית סוללה.
+                    </p>
+                </details>
+
+                <!-- לשונית 3 - שימוש במוצר קפוא -->
+                <details class="group bg-white rounded-2xl border border-slate-200/60 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm hover:shadow transition">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                        <span>🧊 האם המערבל מתאים לפירות קפואים וקרח?</span>
+                        <span class="transition group-open:rotate-180 text-red-500">▼</span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600 text-sm md:text-base">
+                        כן! הבלנדר מצויד במנוע טורבו עוצמתי וב-6 להבי פלדת אל-חלד מעובים שמסוגלים לרסק בקלות פירות קפואים, קרח, אבקות חלבון ואפילו אגוזים קשים ליצירת שייק במרקם קטיפתי וחלק.
+                    </p>
+                </details>
+
+                <!-- לשונית 4 - שירות לקוחות -->
+                <details class="group bg-white rounded-2xl border border-slate-200/60 p-5 [&_summary::-webkit-details-marker]:hidden cursor-pointer shadow-sm hover:shadow transition">
+                    <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                        <span>💬 איך ניתן ליצור קשר עם שירות הלקוחות?</span>
+                        <span class="transition group-open:rotate-180 text-red-500">▼</span>
+                    </summary>
+                    <p class="mt-4 leading-relaxed text-slate-600 text-sm md:text-base">
+                        אנחנו פה בשבילכם לכל שאלה! ניתן לפנות אלינו ישירות בוואצאפ באמצעות הכפתור הירוק הצף בצד האתר, או בלחיצה על כפתור הרכישה. מענה מהיר מובטח תוך פחות מ-30 דקות.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- פוטר (תחתית האתר) -->
+    <footer class="bg-slate-900 text-slate-400 py-10 px-6 text-center border-t border-slate-800">
+        <div class="container mx-auto space-y-4">
+            <h2 class="text-2xl font-black text-transparent bg-clip-text fruit-gradient">freshy.</h2>
+            <p class="text-sm max-w-md mx-auto">מערבלים אל-חוטיים חכמים לאורח חיים בריא, קל ומהיר. כל הזכויות שמורות לשנת 2026 © freshy</p>
+            <div class="flex justify-center gap-6 text-xs text-slate-500">
+                <a href="#" class="hover:underline">תקנון האתר</a>
+                <a href="#" class="hover:underline">מדיניות פרטיות</a>
+                <a href="#" class="hover:underline">הצהרת נגישות</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- כפתור וואצאפ צף בצד ימין למטה כפי שביקשת -->
+    <a href="https://wa.me/972546925532?text=%D7%94%D7%99%D7%99%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%9C%20%D7%A4%D7%A8%D7%92%D7%95%D7%9F%20%D7%95%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%91%D7%9C%D7%A0%D7%93%D7%A8%20%D7%A9%D7%9C%20freshy" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center group"
+       title="צרו קשר בוואצאפ">
+        <!-- נקודת התראה מהבהבת לעורר עניין -->
+        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
+        </span>
+        <!-- אייקון וואצאפ רשמי -->
+        <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.244 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.18 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.388 1.967 13.911 1.01 11.285 1.01 5.845 1.01 1.42 5.381 1.416 10.81c-.001 1.696.452 3.35 1.307 4.8l-.993 3.63 3.734-.964z"/>
+        </svg>
+    </a>
+
+    <!-- קוד ג'אווה-סקריפט פשוט לפתיחה וסגירה של דף המוצר (Modal) -->
+    <script>
+        const modal = document.getElementById('product-page-modal');
+
+        function openProductPage() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // מניעת גלילה ברקע כשהחלון פתוח
+        }
+
+        function closeProductPage() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // החזרת הגלילה למצב רגיל
+        }
+
+        // סגירת החלון בלחיצה מחוץ לתוכן שלו
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeProductPage();
+            }
+        }
+    </script>
+</body>
+</html>
